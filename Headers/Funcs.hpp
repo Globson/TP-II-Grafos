@@ -1,25 +1,28 @@
 #ifndef FUNCS_HPP
 #define FUNCS_HPP
-#include <iostream>
-#include <ctime>
-#include <vector>
-#include <stack>
-#include <list>
-#include <algorithm>
-using namespace std;
-void inicializaMatrizAleatoria(int Matriz[][3]);
-void inicializaMatrizResolvida(int MatrizR[][3]);
+// Grafos - Lista de adjacência
 
-class Grafo{
-  int V; // número de vértices
+#include <iostream>
+#include <list>
+#include <algorithm> // função find
+
+using namespace std;
+
+class Grafo
+{
+	int V; // número de vértices
 	list<int> *adj; // ponteiro para um array contendo as listas de adjacências
 
 public:
 	Grafo(int V); // construtor
 	void adicionarAresta(int v1, int v2); // adiciona uma aresta no grafo
-  void AcrescentaVertice(int NovoV);
-  void getAdjacencias();
-	// faz uma DFS a partir de um vértice
-	void dfs(int v);
+
+	// obtém o grau de saída de um dado vértice
+	// grau de saída é o número de arcos que saem de "v"
+	int obterGrauDeSaida(int v);
+  int obterGrau(int v);
+	bool existeVizinho(int v1, int v2); // verifica se v2 é vizinho de v1
 };
+
+
 #endif
