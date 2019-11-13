@@ -1,5 +1,5 @@
-#ifndef GRAFOMATRIZ_GRAFO_H
-#define GRAFOMATRIZ_GRAFO_H
+#ifndef MATRIZADJACENCIA_HPP
+#define MATRIZADJACENCIA_HPP
 
 #include <iostream>
 #include <iomanip>
@@ -9,7 +9,8 @@ using namespace std;
 
 class Grafo {
 private:
-    int mat[NUMVERTICES][NUMVERTICES];
+    int MatrizAdjacencia[NUMVERTICES+1][NUMVERTICES+1];
+    int QuantDeArestas[NUMVERTICES+1][NUMVERTICES+1];
     int n, m;
 
 public:
@@ -20,8 +21,9 @@ public:
     }
 
     void inicializar();
-    void inserirAresta(int u, int v, int w);
+    void inserirAresta(int u, int v, int w); // u = vertice 1, v= vertice 2, w = peso da aresta
     void mostrar();
+    int retornaGrau(int v);
 
 };
 

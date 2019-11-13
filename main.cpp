@@ -1,30 +1,5 @@
 #include "Headers/MatrizAdjacencia.hpp"
 int main(int argc, char const *argv[]) {
-  /*// criando um grafo de 4 vértices
-	Grafo grafo(4);
-
-	// adicionando as arestas
-	grafo.adicionarAresta(0, 1);
-	grafo.adicionarAresta(0, 3);
-	grafo.adicionarAresta(1, 2);
-	grafo.adicionarAresta(3, 1);
-	grafo.adicionarAresta(3, 2);
-
-	// mostrando os graus de saída
-	cout << "Grau de saida do vertice 1: " << grafo.obterGrauDeSaida(1);
-	cout << "\nGrau de saida do vertice 3: " << grafo.obterGrauDeSaida(3);
-
-	// verifica se existe vizinhos
-	if(grafo.existeVizinho(0, 1))
-		cout << "\n\n1 eh vizinho de 0\n";
-	else
-		cout << "\n\n1 NAO eh vizinho de 0\n";
-
-	if(grafo.existeVizinho(0, 2))
-		cout << "2 eh vizinho de 0\n";
-	else
-		cout << "2 NAO eh vizinho de 0\n";
-*/
   FILE *f;
   char NomeArquivo[20]="Arquivo.txt";
   int Vertices=0,valorAux1=0,valorAux2=0;
@@ -45,13 +20,11 @@ int main(int argc, char const *argv[]) {
          cout<<"ValorAux2: "<<valorAux2<<endl<<endl;
          grafo.inserirAresta(valorAux1,valorAux2,1);
       }
-      /*while(true){
-        int valor;
-        cout<<"Entre com o vertice a verificar grau:";
-        cin>>valor;
-        cout<<grafo.obterGrau(valor)<<endl;
-      }*/
       grafo.mostrar();
+      for(int i=1;i<=Vertices+1;i++){
+        cout<<endl<<"O grau do vertice "<<i<<" é: "<<grafo.retornaGrau(i)<<endl;
+      }
+
     }
 
 
