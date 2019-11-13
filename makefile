@@ -1,5 +1,5 @@
-all: main.cpp Sources/Funcs.cpp
-	g++ main.cpp -o EXEC Sources/Funcs.cpp
+all: main.cpp Sources/MatrizAdjacencia.cpp
+	g++ main.cpp -o EXEC Sources/MatrizAdjacencia.cpp
 
 run: EXEC
 	./EXEC

@@ -1,4 +1,4 @@
-#include "Headers/Funcs.hpp"
+#include "Headers/MatrizAdjacencia.hpp"
 int main(int argc, char const *argv[]) {
   /*// criando um grafo de 4 vértices
 	Grafo grafo(4);
@@ -43,15 +43,15 @@ int main(int argc, char const *argv[]) {
         fscanf(f,"%d %d",&valorAux1,&valorAux2);
          cout<<"ValorAux1: "<<valorAux1<<endl;
          cout<<"ValorAux2: "<<valorAux2<<endl<<endl;
-        grafo.adicionarAresta(valorAux1,valorAux2);
+         grafo.inserirAresta(valorAux1,valorAux2,1);
       }
-      while(true){
+      /*while(true){
         int valor;
         cout<<"Entre com o vertice a verificar grau:";
         cin>>valor;
         cout<<grafo.obterGrau(valor)<<endl;
-      }
-
+      }*/
+      grafo.mostrar();
     }
 
 
