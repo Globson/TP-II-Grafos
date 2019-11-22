@@ -90,6 +90,10 @@ bool AlgoritmoFleury::ArestaValida(int i, int j){  //Verifica se é ponte;
 
   bool Visitados1[GrafoInterno->V];
   bool Visitados2[GrafoInterno->V];
+  for(int i=0;i<GrafoInterno->V;i++){
+    Visitados1[i] = false;
+    Visitados2[i] = false;
+  }
   DFS(i,Visitados1);
   GrafoInterno->removeAresta(i,j);
   DFS(i,Visitados2);
