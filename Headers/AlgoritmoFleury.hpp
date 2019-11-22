@@ -12,7 +12,5 @@ public:
   void VerificaEuleriano(Grafo *Grafo);
   bool VerificaConexo();
   void EscolheArestaImprime();
-
-
 };
 #endif

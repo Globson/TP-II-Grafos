@@ -16,8 +16,6 @@ public:
  Grafo(int V); // construtor
  void adicionarAresta(int v1, int v2); // adiciona uma aresta no grafo
  void removeAresta(int v1, int v2);
- // faz uma DFS a partir de um vértice
- void dfs(int v);
  int obterGrau(int v);
  friend class AlgoritmoFleury;
 };
