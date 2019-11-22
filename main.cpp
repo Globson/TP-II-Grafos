@@ -14,17 +14,12 @@ int main(int argc, char const *argv[]) {
     cout<<"\n\tArquivo aberto com sucesso!"<<endl;
     if(!feof(f)){
       fscanf(f,"%d",&Vertices);
-      //cout<<valorAux1<<endl;
       grafo = new Grafo(Vertices); //Vertice 0 é sempre desconsiderado
-      //while(!feof(f)){
-      for(int i=0;i<7;i++){
-         fscanf(f,"%d %d",&valorAux1,&valorAux2);
+      while(!feof(f)){
+         fscanf(f,"%d %d ",&valorAux1,&valorAux2);
          cout<<valorAux1<<" "<<valorAux2<<endl;
-         //cout<<"ValorAux1: "<<valorAux1<<endl;
-         //cout<<"ValorAux2: "<<valorAux2<<endl<<endl;
          grafo->adicionarAresta(valorAux1-1,valorAux2-1);
       }
-      //cout<<"Grau do vertice 3: "<<grafo->obterGrau(2)<<endl;
     }
     fclose(f);
     AlgoritmoFleury Teste;
