@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 
 int main(int argc, char const *argv[]) {
   FILE *f;
   int Vertices,Semi;
-  srand(time(NULL));
   char Nome[20];
   printf("Entre com o nome do arquivo de saida ser criado: ");
   scanf("%s",Nome);
