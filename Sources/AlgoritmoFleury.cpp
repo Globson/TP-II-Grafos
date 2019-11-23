@@ -85,7 +85,7 @@ int AlgoritmoFleury::QuantVerticesVisitados(bool Visitados[]){ // Função que r
 }
 
 bool AlgoritmoFleury::ArestaValida(int i, int j){  //Retorna true caso aresta não seja uma ponte, false caso seja.
-  if(GrafoInterno->obterGrau(i)==1){ //Caso o grau seja 1,
+  if(GrafoInterno->obterGrau(i)==1){
     return true;
   }
 
@@ -99,7 +99,7 @@ bool AlgoritmoFleury::ArestaValida(int i, int j){  //Retorna true caso aresta n�
   GrafoInterno->removeAresta(i,j);
   DFS(i,Visitados2);                      //São computados os vetores de visitados um com a aresta e outro sem.
   GrafoInterno->adicionarAresta(i,j);
-  return (QuantVerticesVisitados(Visitados2) >= QuantVerticesVisitados(Visitados1));  //Caso a quantidade de vertices visitados forem maiores ou igual, aresta não é uma ponte.
+  return QuantVerticesVisitados(Visitados1) > QuantVerticesVisitados(Visitados2) ? false : true;  //Caso a quantidade de vertices visitados forem maiores ou igual, aresta não é uma ponte.
 }
 
 void AlgoritmoFleury::ImprimePasseioEuleriano(int VerticeInicio){  //Impressão de caminho ou ciclo euleriano
