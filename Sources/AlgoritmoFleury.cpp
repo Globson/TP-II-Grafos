@@ -15,7 +15,7 @@ void AlgoritmoFleury::DFS(int x,bool Visitados[]){
 void AlgoritmoFleury::VerificaEuleriano(Grafo *Grafo){
   this->GrafoInterno = Grafo;
   if(!VerificaConexo()){
-    cout<<"Não é um grafo euleriano"<<endl;
+    cout<<"   -->Grafo nao euleriano<--"<<endl<<endl;
     return;
   }
   int aux=0;
@@ -25,17 +25,19 @@ void AlgoritmoFleury::VerificaEuleriano(Grafo *Grafo){
     }
   }
   if(aux>2){
-    cout<<"Não é um grafo euleriano"<<endl;
+    cout<<"   -->Grafo nao euleriano<--"<<endl<<endl;
     return;
   }
 
   if(aux==2){
-    cout<<"É um grafo semi-euleriano"<<endl;
+    cout<<"   -->Grafo semi-euleriano<--"<<endl<<endl;
+    cout<<"Impressao da trilha euleriana:"<<endl;
     EscolheArestaImprime();
     return;
   }
   else{
-    cout<<"É um grafo euleriano"<<endl;
+    cout<<"   -->Grafo euleriano<--"<<endl<<endl;
+    cout<<"Impressao do ciclo euleriano:"<<endl;
     EscolheArestaImprime();
     return;
   }
@@ -105,7 +107,7 @@ void AlgoritmoFleury::ImprimePasseioEuleriano(int VerticeInicio){
   for(unsigned int i=0;i<GrafoInterno->adj[VerticeInicio].size();i++){
       int x = GrafoInterno->adj[VerticeInicio].at(i);
       if(ArestaValida(VerticeInicio,x)){
-        cout<<(VerticeInicio+1)<<"<-->"<<(x+1)<<endl;
+        cout<<"\t("<<(VerticeInicio+1)<<")<==>("<<(x+1)<<")"<<endl;
         GrafoInterno->removeAresta(VerticeInicio, x);
         ImprimePasseioEuleriano(x);
       }
