@@ -3,7 +3,7 @@
 int main(int argc, char const *argv[]) {
   FILE *f;
   char NomeArquivo[20];
-  int Vertices=0,valorAux1=0,valorAux2=0;
+  int Vertices,valorAux1,valorAux2;
   Grafo *grafo;
   cout<<"\nDigite o nome do arquivo que deseja abrir:";    //Abrindo arquivo//
   cin>>NomeArquivo;
@@ -13,20 +13,20 @@ int main(int argc, char const *argv[]) {
   else{
     cout<<"\n\tArquivo aberto com sucesso!"<<endl;
     if(!feof(f)){
-      fscanf(f,"%d",&Vertices);
-      grafo = new Grafo(Vertices); //Vertice 0 é sempre desconsiderado
+      fscanf(f,"%d ",&Vertices);
+      grafo = new Grafo(Vertices);
       cout<<"Quantidade de vertices: "<<Vertices<<endl;
       cout<<"Arestas: "<<endl;
       while(!feof(f)){
          fscanf(f,"%d %d ",&valorAux1,&valorAux2);
          cout<<"\t("<<valorAux1<<")====("<<valorAux2<<")"<<endl;
-         grafo->adicionarAresta(valorAux1-1,valorAux2-1);
+         grafo->adicionarAresta(valorAux1-1,valorAux2-1); //Vertices recebem -1 para serem contabilizados da forma correta
       }
     }
     fclose(f);
-    AlgoritmoFleury Teste;
+    AlgoritmoFleury EulerTest;
     cout<<endl;
-    Teste.VerificaEuleriano(grafo);
+    EulerTest.VerificaEuleriano(grafo);
   }
 
   return 0;
